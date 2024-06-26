@@ -84,5 +84,5 @@ const SignIn = () => {
     </SafeAreaView>
   );
 };
-// min-h-screen justify-center px-4
+
 export default SignIn;

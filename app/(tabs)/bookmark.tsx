@@ -11,7 +11,7 @@ const Bookmark = () => {
         </View>
       </ScrollView>
 
-      <StatusBar backgroundColor="white" style="dark" />
+      <StatusBar backgroundColor="#0369a1" style="light" translucent={true} />
     </SafeAreaView>
   );
 };
