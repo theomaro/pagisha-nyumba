@@ -1,17 +1,27 @@
 import { ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
+import { Link } from "expo-router";
 
 export default function Index() {
   return (
-    <SafeAreaView className="bg-blue-500 h-full">
+    <SafeAreaView className="bg-sky-200">
       <ScrollView contentContainerStyle={{ height: "100%" }}>
-        <View className="w-full min-h-screen justify-center items-center px-4">
-          <Text className="text-sky-100">Pangisha Nyumba</Text>
+        <View className="w-full min-h-screen justify-center items-start px-4">
+          <Text className="text-6xl text-sky-700 font-bold basis-1/2 max-w-[300px]">
+            Rent a House for you.
+          </Text>
+
+          <Link
+            href="/sign-in"
+            className="w-full py-3 bg-sky-700 text-sky-100 text-center text-2xl font-bold rounded-lg"
+          >
+            Book Now
+          </Link>
         </View>
       </ScrollView>
 
-      <StatusBar backgroundColor="white" style="dark" />
+      <StatusBar backgroundColor="#0369a1" style="light" translucent={true} />
     </SafeAreaView>
   );
 }
