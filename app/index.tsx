@@ -5,7 +5,7 @@ import { Link } from "expo-router";
 
 export default function Index() {
   return (
-    <SafeAreaView className="bg-sky-200">
+    <SafeAreaView className="bg-sky-200 h-full">
       <ScrollView contentContainerStyle={{ height: "100%" }}>
         <View className="w-full min-h-screen justify-center items-start px-4">
           <Text className="text-6xl text-sky-700 font-bold basis-1/2 max-w-[300px]">
