@@ -1,5 +1,6 @@
 import ActionButton from "@/components/ActionButton";
 import FormField from "@/components/FormField";
+import SkipTo from "@/components/SkipTo";
 import { Link } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { View, Text, ScrollView } from "react-native";
@@ -24,6 +25,8 @@ const SignIn = () => {
   return (
     <SafeAreaView className="bg-slate-100 h-full">
       <ScrollView contentContainerStyle={{ height: "100%" }}>
+        <SkipTo path="/home" />
+
         <View className="w-full my-20 px-4">
           <Text className="text-2xl text-sky-700 font-bold max-w-[300px]">
             Register new account
