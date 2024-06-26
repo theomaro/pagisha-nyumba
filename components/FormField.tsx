@@ -1,4 +1,6 @@
-import { View, Text, TextInput } from "react-native";
+import { icons } from "@/constants";
+import { useState } from "react";
+import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 
 const FormField = ({
   label,
@@ -21,16 +23,33 @@ const FormField = ({
   fieldStyles?: string;
   onChangeHandler: (text: string) => void;
 }) => {
+  const [showPassword, setshowPassword] = useState<boolean>(false);
+
   return (
     <View className={`w-full space-y-2 ${fieldStyles}`}>
       <Text className="text-xl font-bold">{label}</Text>
-      <TextInput
-        onChangeText={onChangeHandler}
-        value={value}
-        placeholder={placeholder}
-        keyboardType={keyboardType}
-        className="bg-black-500 border-2 border-slate-500 rounded-lg px-3 h-14 text-xl"
-      />
+
+      <View className="w-full h-14 px-3 flex-row justify-between items-center border-2 border-slate-500 focus:border-sky-500 rounded-lg">
+        <TextInput
+          onChangeText={onChangeHandler}
+          value={value}
+          placeholder={placeholder}
+          placeholderTextColor="#7b7b8b"
+          keyboardType={keyboardType}
+          className="text-lg font-semibold flex-1"
+          secureTextEntry={label === "Password" && !showPassword}
+        />
+
+        {label === "Password" && (
+          <TouchableOpacity onPress={() => setshowPassword(!showPassword)}>
+            <Image
+              source={!showPassword ? icons.eye : icons.eyeHide}
+              className="w-6 h-6"
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
+        )}
+      </View>
     </View>
   );
 };
