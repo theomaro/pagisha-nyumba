@@ -1,7 +1,8 @@
 import { ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
+import ActionButton from "@/components/ActionButton";
 
 export default function Index() {
   return (
@@ -12,12 +13,11 @@ export default function Index() {
             Rent a House for you.
           </Text>
 
-          <Link
-            href="/sign-in"
-            className="w-full py-3 bg-sky-700 text-sky-100 text-center text-2xl font-bold rounded-lg"
-          >
-            Book Now
-          </Link>
+          <ActionButton
+            title="Book Now"
+            containerStyles="w-full"
+            onPressHandler={() => router.push("/sign-in")}
+          />
         </View>
       </ScrollView>
 
