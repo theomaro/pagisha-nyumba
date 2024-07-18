@@ -39,11 +39,7 @@ const SignIn = () => {
             value={formData.fullname}
             placeholder=""
             onChangeHandler={(text) =>
-              setformData({
-                fullname: text,
-                password: formData.password,
-                email: formData.email,
-              })
+              setformData({ ...formData, fullname: text })
             }
           />
 
@@ -54,11 +50,7 @@ const SignIn = () => {
             fieldStyles="mt-5"
             keyboardType="email-address"
             onChangeHandler={(text) =>
-              setformData({
-                email: text,
-                password: formData.password,
-                fullname: formData.fullname,
-              })
+              setformData({ ...formData, email: text })
             }
           />
 
@@ -68,11 +60,7 @@ const SignIn = () => {
             placeholder=""
             fieldStyles="mt-5"
             onChangeHandler={(text) =>
-              setformData({
-                email: formData.email,
-                password: text,
-                fullname: formData.fullname,
-              })
+              setformData({ ...formData, password: text })
             }
           />
 

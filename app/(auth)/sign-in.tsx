@@ -38,10 +38,7 @@ const SignIn = () => {
             placeholder=""
             keyboardType="email-address"
             onChangeHandler={(text) =>
-              setformData({
-                email: text,
-                password: formData.password,
-              })
+              setformData({ ...formData, password: formData.password })
             }
           />
 
@@ -51,10 +48,7 @@ const SignIn = () => {
             placeholder=""
             fieldStyles="mt-7"
             onChangeHandler={(text) =>
-              setformData({
-                email: formData.email,
-                password: text,
-              })
+              setformData({ ...formData, email: formData.email })
             }
           />
 
